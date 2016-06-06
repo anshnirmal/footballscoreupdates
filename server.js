@@ -7,6 +7,9 @@ var token = "EAAXPLuYkUpEBAEJq4kG9LhlnGFY6RLmjXeR1Ia6F2qTCigMl4CwgoEeNra3s1aWAYK
 
 app.set('port', (process.env.PORT || 5000))
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}))
+
 app.get('/', function (req, res) {
 	res.send('hello world i am a secret bot')
 });
