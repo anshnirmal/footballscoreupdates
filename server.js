@@ -46,12 +46,21 @@ function IsValidProperty(sender, prop){
   SendInfoToUser(prop, sender);
 }
 
-function SendInfoToUser(prop, sender){    
-    PostToUser(sender, 'anish');
+function SendInfoToUser(prop, sender){
+	  scores({ date: '2016-06-04' }, function (data) {
+    var result_text = "-- : Match Results : -- \n\n";
+    
+    for (i = 0 ; i < (data).length ; i++) {
+            result_text += 'Status: ' + data[i].status + '\n';
+            result_text += 'Home: ' + data[i].home + '\n';
+            result_text += 'Away: ' + data[i].away + '\n';
+            result_text += 'Result: ' + data[i].result + '\n\n\n';
+          }
+  })
+    PostToUser(sender, result_text);
 }
 
 function PostToUser(senderId, message){
-  console.log(message);
 	messageData = {
 		text:message
 	}
