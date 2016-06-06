@@ -46,10 +46,11 @@ app.post('/webhook/', function (req, res) {
 })
 
 function IsValidProperty(sender, prop){
-  SendInfoToUser(prop, sender);
+	console.log("#################", prop);
+  SendInfoToUser(sender, prop);
 }
 
-function SendInfoToUser(prop, sender){
+function SendInfoToUser(sender, prop){
 	console.log(prop);
 climate.getMaximumTemp( prop + '', function(temp){
     console.log("Maximum temperature: " + temp);
