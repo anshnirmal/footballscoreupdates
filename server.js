@@ -48,16 +48,17 @@ function IsValidProperty(sender, prop){
 }
 
 function SendInfoToUser(prop, sender){
-//	  scores({ date: '2016-06-04' }, function (data) {
-//    var result_text = "-- : Match Results : -- \n\n";
-//    
-//    for (i = 0 ; i < 2 ; i++) {
-//            result_text += 'Status: ' + data[i].status + '\n';
-//            result_text += 'Home: ' + data[i].home + '\n';
-//            result_text += 'Away: ' + data[i].away + '\n';
-//            result_text += 'Result: ' + data[i].result + '\n\n\n';
-//          }
-//  })
+	  scores({ date: '2016-06-04' }, function (data) {
+    var result_text = "-- : Match Results : -- \n\n";
+    
+    for (i = 0 ; i < 2 ; i++) {
+            result_text += 'Status: ' + data[i].status + '\n';
+            result_text += 'Home: ' + data[i].home + '\n';
+            result_text += 'Away: ' + data[i].away + '\n';
+            result_text += 'Result: ' + data[i].result + '\n\n\n';
+          }
+  })
+		console.log(result_text);
   	var moreInfo = caniuse.find('border');
   var moreinfoString = moreInfo.join(",");
     PostToUser(sender, moreinfoString);
