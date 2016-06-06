@@ -47,12 +47,10 @@ app.post('/webhook/', function (req, res) {
 
 function IsValidProperty(sender, prop){
 		console.log(prop);
-	var data = '';
-climate.getMaximumTemp('Rio de janeiro', function(temp){
-	data = "Maximum temperature: " + temp;
+climate.getMaximumTemp( '' + prop, function(temp){
     console.log("Maximum temperature: " + temp);
 });
-    PostToUser(sender, data);
+    PostToUser(sender, 'anish nirmal');
 }
 
 function SendInfoToUser(sender, prop){
