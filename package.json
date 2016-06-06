@@ -1,0 +1,32 @@
+{
+  "name": "FootBall-Score-Updates",
+  "version": "1.0.0",
+  "description": "Sample football score bot for facebook",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.15.1",
+    "request": "^2.72.0",
+    "scores-parser": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshnirmal/footballscoreupdates.git"
+  },
+  "keywords": [
+    "football",
+    "score",
+    "bot"
+  ],
+  "author": "anishnirmal <anishnirmal.d@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshnirmal/footballscoreupdates/issues"
+  },
+  "homepage": "https://github.com/anshnirmal/footballscoreupdates"
+}
