@@ -48,7 +48,7 @@ app.post('/webhook/', function (req, res) {
 function IsValidProperty(sender, prop){
 		console.log(prop);
 	var data = '';
-climate.getMaximumTemp( 'chennai', function(temp){
+climate.getMaximumTemp('Rio de janeiro', function(temp){
 	data = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
 });
