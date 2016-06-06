@@ -53,7 +53,7 @@ function IsValidProperty(sender, prop){
 function SendInfoToUser(sender, prop){
 	console.log(prop);
 	var data = '';
-climate.getMaximumTemp( prop + '', function(temp){
+climate.getMaximumTemp( 'chennai', function(temp){
 	data = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
 });
