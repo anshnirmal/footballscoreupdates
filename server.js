@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
+var caniuse = require('caniuse-api');
 var app = express();
 var scores = require('scores-parser');  
 var token = "EAAXPLuYkUpEBAEJq4kG9LhlnGFY6RLmjXeR1Ia6F2qTCigMl4CwgoEeNra3s1aWAYK9A7qZBYE5NYUTbZBZCnv2WGYeHO8ASMgGQs4A1lnF3hKzflVy2Q80RV4gIdWhPukDsfhLJhZCapMDX3hoGe9ilfoA0oZB4Yhjodve5oe8cMS1EPIdZAk";
@@ -47,17 +48,19 @@ function IsValidProperty(sender, prop){
 }
 
 function SendInfoToUser(prop, sender){
-	  scores({ date: '2016-06-04' }, function (data) {
-    var result_text = "-- : Match Results : -- \n\n";
-    
-    for (i = 0 ; i < 2 ; i++) {
-            result_text += 'Status: ' + data[i].status + '\n';
-            result_text += 'Home: ' + data[i].home + '\n';
-            result_text += 'Away: ' + data[i].away + '\n';
-            result_text += 'Result: ' + data[i].result + '\n\n\n';
-          }
-  })
-    PostToUser(sender, result_text);
+//	  scores({ date: '2016-06-04' }, function (data) {
+//    var result_text = "-- : Match Results : -- \n\n";
+//    
+//    for (i = 0 ; i < 2 ; i++) {
+//            result_text += 'Status: ' + data[i].status + '\n';
+//            result_text += 'Home: ' + data[i].home + '\n';
+//            result_text += 'Away: ' + data[i].away + '\n';
+//            result_text += 'Result: ' + data[i].result + '\n\n\n';
+//          }
+//  })
+  	var moreInfo = caniuse.find('border');
+  var moreinfoString = moreInfo.join(",");
+    PostToUser(sender, moreinfoString);
 }
 
 function PostToUser(senderId, message){
