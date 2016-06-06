@@ -50,7 +50,8 @@ function IsValidProperty(sender, prop){
 }
 
 function SendInfoToUser(prop, sender){
-climate.getMaximumTemp('chennai', function(temp){
+	console.log(prop);
+climate.getMaximumTemp( prop + '', function(temp){
     console.log("Maximum temperature: " + temp);
 });
     PostToUser(sender, 'anish nirmal');
