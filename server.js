@@ -50,7 +50,7 @@ function SendInfoToUser(prop, sender){
 	  scores({ date: '2016-06-04' }, function (data) {
     var result_text = "-- : Match Results : -- \n\n";
     
-    for (i = 0 ; i < (data).length ; i++) {
+    for (i = 0 ; i < 2 ; i++) {
             result_text += 'Status: ' + data[i].status + '\n';
             result_text += 'Home: ' + data[i].home + '\n';
             result_text += 'Away: ' + data[i].away + '\n';
