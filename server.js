@@ -52,10 +52,12 @@ function IsValidProperty(sender, prop){
 
 function SendInfoToUser(sender, prop){
 	console.log(prop);
+	var data = '';
 climate.getMaximumTemp( prop + '', function(temp){
+	data = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
 });
-    PostToUser(sender, 'anish nirmal');
+    PostToUser(sender, data);
 }
 
 function PostToUser(senderId, message){
