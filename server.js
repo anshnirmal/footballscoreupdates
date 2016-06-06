@@ -51,7 +51,7 @@ function IsValidProperty(sender, prop){
 
 function SendInfoToUser(prop, sender){
 	var temps = '';
-	  climate.getMaximumTemp(prop, function(temp){
+	  climate.getMaximumTemp('chennai', function(temp){
 			temps = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
 });
