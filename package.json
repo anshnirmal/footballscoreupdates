@@ -8,7 +8,8 @@
     "body-parser": "^1.15.1",
     "request": "^2.72.0",
     "scores-parser": "^3.0.0",
-    "caniuse-api": "^1.5.0"
+    "caniuse-api": "^1.5.0",
+    "city-weather": "^1.0.4"
   },
   "devDependencies": {},
   "scripts": {

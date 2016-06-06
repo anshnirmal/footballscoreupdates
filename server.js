@@ -3,7 +3,9 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var caniuse = require('caniuse-api');
 var app = express();
-var scores = require('scores-parser');  
+var scores = require('scores-parser');
+var climate = require('city-weather');
+
 var token = "EAAXPLuYkUpEBAEJq4kG9LhlnGFY6RLmjXeR1Ia6F2qTCigMl4CwgoEeNra3s1aWAYK9A7qZBYE5NYUTbZBZCnv2WGYeHO8ASMgGQs4A1lnF3hKzflVy2Q80RV4gIdWhPukDsfhLJhZCapMDX3hoGe9ilfoA0oZB4Yhjodve5oe8cMS1EPIdZAk";
 
 app.set('port', (process.env.PORT || 5000))
@@ -48,20 +50,13 @@ function IsValidProperty(sender, prop){
 }
 
 function SendInfoToUser(prop, sender){
-	  scores({ date: '2016-06-04' }, function (data) {
-    var result_text = "-- : Match Results : -- \n\n";
-    
-    for (i = 0 ; i < 2 ; i++) {
-            result_text += 'Status: ' + data[i].status + '\n';
-            result_text += 'Home: ' + data[i].home + '\n';
-            result_text += 'Away: ' + data[i].away + '\n';
-            result_text += 'Result: ' + data[i].result + '\n\n\n';
-          }
-  })
-		console.log(result_text);
-  	var moreInfo = caniuse.find('border');
-  var moreinfoString = moreInfo.join(",");
-    PostToUser(sender, moreinfoString);
+	var temps = '';
+	  climate.getMaximumTemp(prop, function(temp){
+			temps = "Maximum temperature: " + temp;
+    console.log("Maximum temperature: " + temp);
+});
+
+    PostToUser(sender, temps);
 }
 
 function PostToUser(senderId, message){
