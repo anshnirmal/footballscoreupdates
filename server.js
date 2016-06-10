@@ -70,7 +70,7 @@ climate.getMaximumTemp( '' + prop, function(temp){
 //});
 
 climate.getClimateDescription('' + prop, function(description){
-	message += "Climate description: " + temp + '\n';
+	message += "Climate description: " + description + '\n';
     console.log("Climate description: " + description);
 });
  
