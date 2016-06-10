@@ -62,7 +62,7 @@ climate.getMaximumTemp( 'chennai', function(temp){
 	message = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
 });
-    PostToUser(sender, 'Maximum temperature: 31');
+    PostToUser(sender, 31);
 }
 
 function PostToUser(senderId, message){
