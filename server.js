@@ -63,9 +63,9 @@ climate.getMaximumTemp( 'chennai', function(temp){
     console.log("Maximum temperature: " + temp);
     setTimeout(function () {
 			console.log('--' + message);
-			PostToUser(sender, message);
-  console.log('boo')
-}, 1000);
+			PostToUser(sender, 'hai');
+  console.log('boo');
+}, 100);
 });
 }
 
