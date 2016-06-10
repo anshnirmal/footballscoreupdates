@@ -47,10 +47,12 @@ app.post('/webhook/', function (req, res) {
 
 function IsValidProperty(sender, prop){
 		console.log(prop);
+	var message = '';
 climate.getMaximumTemp( '' + prop, function(temp){
+	message = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
 });
-    PostToUser(sender, 'anish nirmal:');
+    PostToUser(sender, message);
 }
 
 function SendInfoToUser(sender, prop){
