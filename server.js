@@ -55,15 +55,17 @@ climate.getMaximumTemp( '' + prop, function(temp){
 
 function SendInfoToUser(sender, prop){
 	console.log(prop);
-	var data = '';
+	var message = '';
 climate.getMaximumTemp( 'chennai', function(temp){
-	data = "Maximum temperature: " + temp;
+	message = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
 });
-    PostToUser(sender, data);
+    PostToUser(sender, message);
 }
 
 function PostToUser(senderId, message){
+	console.log('-------->');
+	console.log(message);
 	messageData = {
 		text:message
 	}
