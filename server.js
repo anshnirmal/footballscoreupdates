@@ -53,7 +53,7 @@ climate.getMaximumTemp( '' + prop, function(temp){
     console.log("Maximum temperature: " + temp);
 		    setTimeout(function () {
 			console.log('--' + message);
-			PostToUser(sender, 'hai');
+			PostToUser(sender, message);
   console.log('boo');
 }, 100);
 });
