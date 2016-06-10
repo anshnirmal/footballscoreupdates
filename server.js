@@ -54,20 +54,20 @@ climate.getMaximumTemp( '' + prop, function(temp){
 		    
 });
 
-climate.getMinimumTemp('' + prop, function(temp){
-	message += "Minimum temperature: " + temp + '\n';
-    console.log("Minimum temperature: " + temp);
-});
- 
-climate.getActualTemp('' + prop, function(temp){
-	message += "Actual temperature: " + temp + '\n';
-    console.log("Actual temperature: " + temp);
-});
- 
-climate.getWindSpeed('' + prop, function(speed){
-	message += "Wind speed: " + temp + '\n';
-    console.log("Wind speed: " + speed);
-});
+//climate.getMinimumTemp('' + prop, function(temp){
+//	message += "Minimum temperature: " + temp + '\n';
+//    console.log("Minimum temperature: " + temp);
+//});
+// 
+//climate.getActualTemp('' + prop, function(temp){
+//	message += "Actual temperature: " + temp + '\n';
+//    console.log("Actual temperature: " + temp);
+//});
+// 
+//climate.getWindSpeed('' + prop, function(speed){
+//	message += "Wind speed: " + temp + '\n';
+//    console.log("Wind speed: " + speed);
+//});
 
 climate.getClimateDescription('' + prop, function(description){
 	message += "Climate description: " + temp + '\n';
@@ -77,8 +77,7 @@ climate.getClimateDescription('' + prop, function(description){
 setTimeout(function () {
 			console.log('--' + message);
 			PostToUser(sender, message);
-  console.log('boo');
-}, 100);
+}, 1000);
 
     //PostToUser(sender, message);
 }
