@@ -61,11 +61,9 @@ function SendInfoToUser(sender, prop){
 climate.getMaximumTemp( 'chennai', function(temp){
 	message = "Maximum temperature: " + temp;
     console.log("Maximum temperature: " + temp);
-    setTimeout(function () {
 			console.log('--' + message);
 			PostToUser(sender, 'hai');
   console.log('boo');
-}, 100);
 });
 }
 
